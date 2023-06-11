@@ -1,0 +1,11 @@
+package com.ibm.ecommerce.dao;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ibm.ecommerce.entity.Role;
+
+@Repository
+public interface RoleDao extends CrudRepository<Role, String> {
+
+}
