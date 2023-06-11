@@ -1,6 +1,5 @@
 package com.ibm.jwt.configuration;
 
-
 import com.ibm.jwt.service.JwtService;
 import com.ibm.jwt.util.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -64,5 +63,3 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     }
 
 }
-
-

@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -57,7 +58,7 @@ public class JwtService implements UserDetailsService {
         }
     }
 
-    private Set<SimpleGrantedAuthority> getAuthority(User user) {
+    private Set getAuthority(User user) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
         user.getRole().forEach(role -> {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
@@ -75,5 +76,3 @@ public class JwtService implements UserDetailsService {
         }
     }
 }
-
-
