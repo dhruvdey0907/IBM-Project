@@ -9,7 +9,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ibm.ecommerce.configuration.JwtRequestFilter;
+import com.ibm.ecommerce.dao.CartDao;
 import com.ibm.ecommerce.dao.ProductDao;
+import com.ibm.ecommerce.dao.UserDao;
+import com.ibm.ecommerce.entity.Cart;
 import com.ibm.ecommerce.entity.Product;
 import com.ibm.ecommerce.entity.User;
 
@@ -17,11 +20,19 @@ import com.ibm.ecommerce.entity.User;
 public class ProductService {
 	@Autowired
 	private ProductDao productDao;
+	
+	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
+	private CartDao cartDao;
+	
+	
 	public Product addNewProduct(Product product) {
 		return productDao.save(product);
 	}
 public List<Product> getAllProducts(int pageNumber,String searchKey){
-	Pageable pageable=PageRequest.of(pageNumber,size:12);
+	Pageable pageable=PageRequest.of(pageNumber, size:12);
 	if (searchKey.equals("")) {
 		return (List<Product>)productDao.findAll(pageable);
 	
@@ -52,10 +63,9 @@ public List<Product> getProductDetails(boolean isSingleProductCheckout, Integer 
         return list;
     } else {
         // we are going to checkout entire cart
-//        String username = JwtRequestFilter.CURRENT_USER;
-//        User user = userDao.findById(username).get();
-//        List<Cart> carts = cartDao.findByUser(user);
-
+        String username = JwtRequestFilter.CURRENT_USER;
+        User user = userDao.findById(username).get();
+        List<Cart> carts = cartDao.findByUser(user);
         return carts.stream().map(x -> x.getProduct()).collect(Collectors.toList());
     }
 }

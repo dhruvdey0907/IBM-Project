@@ -17,6 +17,10 @@ public class Cart {
 	private Product product;
 	@OneToOne
 	private User user;
+	
+	public Cart() {
+		
+	}
 	public Integer getCardId() {
 		return CardId;
 	}
