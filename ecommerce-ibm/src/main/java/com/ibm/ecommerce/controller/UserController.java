@@ -18,15 +18,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    
     @PostConstruct
     public void initRoleAndUser() {
         userService.initRoleAndUser();
     }
-
     @PostMapping({"/registerNewUser"})
     public User registerNewUser(@RequestBody User user) {
-        return userService.registerNewUser(user);
+    	return userService.registerNewUser(user);
     }
+
+    //@PostMapping({"/registerNewUser"})
+    //public User registerNewUser(@RequestBody User user) {
+      //  return userService.registerNewUser(user);
+    //}
 
     @GetMapping({"/forAdmin"})
     @PreAuthorize("hasRole('Admin')")

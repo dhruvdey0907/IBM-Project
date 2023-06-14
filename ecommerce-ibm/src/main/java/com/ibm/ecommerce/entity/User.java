@@ -6,7 +6,8 @@ import java.util.Set;
 @Entity
 public class User {
 
-    @Id
+    public static final String Service = null;
+	@Id
     private String userName;
     private String userFirstName;
     private String userLastName;
