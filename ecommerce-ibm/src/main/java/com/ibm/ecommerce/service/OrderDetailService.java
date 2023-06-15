@@ -1,19 +1,25 @@
 package com.ibm.ecommerce.service;
 
-import com.razorpay.Order;
-import com.razorpay.RazorpayClient;
 import com.ibm.ecommerce.configuration.JwtRequestFilter;
 import com.ibm.ecommerce.dao.CartDao;
 import com.ibm.ecommerce.dao.OrderDetailDao;
 import com.ibm.ecommerce.dao.ProductDao;
 import com.ibm.ecommerce.dao.UserDao;
 import com.ibm.ecommerce.entity.*;
+import com.razorpay.Order;
+import com.razorpay.RazorpayClient;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
 
 @Service
 public class OrderDetailService {
@@ -59,7 +65,7 @@ public class OrderDetailService {
 
         return orderDetailDao.findByUser(user);
     }
-    
+
     public void placeOrder(OrderInput orderInput, boolean isSingleProductCheckout) {
         List<OrderProductQuantity> productQuantityList = orderInput.getOrderProductQuantityList();
 
@@ -73,7 +79,7 @@ public class OrderDetailService {
                   orderInput.getFullName(),
                   orderInput.getFullAddress(),
                   orderInput.getContactNumber(),
-                  orderInput.getAlternateContactNumber(),
+                  orderInput.getEmailId(),
                     ORDER_PLACED,
                     product.getProductDiscountedPrice() * o.getQuantity(),
                     product,
@@ -87,9 +93,63 @@ public class OrderDetailService {
                 carts.stream().forEach(x -> cartDao.deleteById(x.getCartId()));
             }
 
-            orderDetailDao.save(orderDetail);
+            orderDetailDao.save(orderDetail);          
+            
+            sendOrderConfirmationEmail(orderDetail);
+        }
+        
+
+        
+    }
+    
+    private void sendOrderConfirmationEmail(OrderDetail orderDetail) {
+        
+        String senderEmail = "dhrubajotidey.2014@gmail.com";
+        String senderPassword = "upagkqbjuinzdsdj";
+
+        
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+
+        
+        Session session = Session.getInstance(properties, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(senderEmail, senderPassword);
+            }
+        });
+
+        try {
+            
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(senderEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(orderDetail.getOrderEmailId()));
+            message.setSubject("Order Confirmation");
+            
+            
+            StringBuilder contentBuilder = new StringBuilder();
+            contentBuilder.append("Dear ").append(orderDetail.getOrderFullName()).append(",\n\n");
+            contentBuilder.append("Thank you for placing an order with our e-commerce store.\n");
+            contentBuilder.append("Order details:\n");
+            contentBuilder.append("Order ID: ").append(orderDetail.getOrderId()).append("\n");
+            contentBuilder.append("Please keep this email for your reference.\n\n");
+            contentBuilder.append("Regards,\n Fashion Finesse Store");
+            
+            
+            message.setText(contentBuilder.toString());
+
+            
+            Transport.send(message);
+
+            System.out.println("Order confirmation email sent to: " + orderDetail.getOrderEmailId());
+        } catch (MessagingException e) {
+            e.printStackTrace();
         }
     }
+    
+ 
 
     public void markOrderAsDelivered(Integer orderId) {
         OrderDetail orderDetail = orderDetailDao.findById(orderId).get();

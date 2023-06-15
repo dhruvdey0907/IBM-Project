@@ -7,7 +7,7 @@ public class OrderInput {
     private String fullName;
     private String fullAddress;
     private String contactNumber;
-    private String alternateContactNumber;
+    private String EmailId;
     private String transactionId;
     private List<OrderProductQuantity> orderProductQuantityList;
 
@@ -43,12 +43,12 @@ public class OrderInput {
         this.contactNumber = contactNumber;
     }
 
-    public String getAlternateContactNumber() {
-        return alternateContactNumber;
+    public String getEmailId() {
+        return EmailId;
     }
 
-    public void setAlternateContactNumber(String alternateContactNumber) {
-        this.alternateContactNumber = alternateContactNumber;
+    public void setEmailId(String EmailId) {
+        this.EmailId = EmailId;
     }
 
     public List<OrderProductQuantity> getOrderProductQuantityList() {

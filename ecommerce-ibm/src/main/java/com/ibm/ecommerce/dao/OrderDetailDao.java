@@ -1,8 +1,9 @@
 package com.ibm.ecommerce.dao;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.ibm.ecommerce.entity.OrderDetail;
 import com.ibm.ecommerce.entity.User;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 

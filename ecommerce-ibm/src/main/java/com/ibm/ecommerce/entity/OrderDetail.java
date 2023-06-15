@@ -11,7 +11,7 @@ public class OrderDetail {
     private String orderFullName;
     private String orderFullOrder;
     private String orderContactNumber;
-    private String orderAlternateContactNumber;
+    private String orderEmailId;
     private String orderStatus;
     private Double orderAmount;
     @OneToOne
@@ -28,7 +28,7 @@ public class OrderDetail {
         this.orderFullName = orderFullName;
         this.orderFullOrder = orderFullOrder;
         this.orderContactNumber = orderContactNumber;
-        this.orderAlternateContactNumber = orderAlternateContactNumber;
+        this.orderEmailId = orderAlternateContactNumber;
         this.orderStatus = orderStatus;
         this.orderAmount = orderAmount;
         this.product = product;
@@ -92,12 +92,12 @@ public class OrderDetail {
         this.orderContactNumber = orderContactNumber;
     }
 
-    public String getOrderAlternateContactNumber() {
-        return orderAlternateContactNumber;
+    public String getOrderEmailId() {
+        return orderEmailId;
     }
 
-    public void setOrderAlternateContactNumber(String orderAlternateContactNumber) {
-        this.orderAlternateContactNumber = orderAlternateContactNumber;
+    public void setOrderEmailId(String orderEmailId) {
+        this.orderEmailId = orderEmailId;
     }
 
     public String getOrderStatus() {
@@ -116,4 +116,3 @@ public class OrderDetail {
         this.orderAmount = orderAmount;
     }
 }
-
