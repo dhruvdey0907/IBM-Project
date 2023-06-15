@@ -1,5 +1,8 @@
 package com.ibm.ecommerce.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ibm.ecommerce.configuration.JwtRequestFilter;
 import com.ibm.ecommerce.dao.CartDao;
 import com.ibm.ecommerce.dao.ProductDao;
@@ -7,8 +10,6 @@ import com.ibm.ecommerce.dao.UserDao;
 import com.ibm.ecommerce.entity.Cart;
 import com.ibm.ecommerce.entity.Product;
 import com.ibm.ecommerce.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
