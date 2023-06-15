@@ -104,7 +104,7 @@ public class OrderDetailService {
     
     private void sendOrderConfirmationEmail(OrderDetail orderDetail) {
         
-        String senderEmail = "fashionfinesse.ib@gmail.com";
+        String senderEmail = "fashionfinesse.ibm@gmail.com";
         String senderPassword = "genkfpbwgkscszts";
 
         
