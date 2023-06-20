@@ -3,6 +3,13 @@ package com.ibm.ecommerce.entity;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * @author Dhrubajoti Dey
+ * I have created an entity in which userName, userFirstName, userLastName, userPassword are recorded.
+ * In this I have also created many to many relationship between user and role entities.
+ * 
+ *
+ */
 @Entity
 public class User {
 

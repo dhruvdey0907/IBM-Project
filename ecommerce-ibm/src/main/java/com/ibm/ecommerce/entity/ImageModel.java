@@ -7,6 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Manya Mishra
+ * This is an entity class in which I have defined table name as image_model and given the properties as id, name, type and picByte[]
+ *
+ */
 @Entity
 @Table(name="image_model")
 public class ImageModel {

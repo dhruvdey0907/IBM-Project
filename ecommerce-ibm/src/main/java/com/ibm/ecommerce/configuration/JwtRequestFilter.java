@@ -18,6 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author Dhrubajoti Dey
+ *Here I have created a system to authorise the users so that the security is maintained.
+ */
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
     

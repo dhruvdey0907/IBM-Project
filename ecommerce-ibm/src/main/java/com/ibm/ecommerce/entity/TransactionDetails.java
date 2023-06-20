@@ -1,5 +1,10 @@
 package com.ibm.ecommerce.entity;
 
+/**
+ * @author Jaspreet Kaur Saluja and Manya Mishra
+ * This is an entity of TransactionDetails in which we have described orderId, currency, amount and key as parameters.
+ *
+ */
 public class TransactionDetails {
 
     private String orderId;

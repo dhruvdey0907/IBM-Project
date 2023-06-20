@@ -3,6 +3,13 @@ package com.ibm.ecommerce.entity;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * @author Manya Mishra
+ * I have created this entity of Product in which I have created productId, productName, productDescription, productActualPrice
+ * I have also created a table named as product_images having parameters as product_id and image_id 
+ * we have created many to many relationship between product and image model entity
+ *
+ */
 @Entity
 public class Product {
 

@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @author Jaspreet Kaur Saluja and Manya Mishra in which we have implemented functionalities.
+ *
+ */
 @Service
 public class ProductService {
 

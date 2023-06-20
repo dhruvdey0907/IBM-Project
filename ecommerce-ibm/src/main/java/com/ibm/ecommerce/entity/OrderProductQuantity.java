@@ -1,5 +1,11 @@
 package com.ibm.ecommerce.entity;
 
+/**
+ * @author Jaspreet Kaur Saluja
+ * This is an entity of OrderProductQuantity in which I have described productId and quantity as parameters.
+ *
+ *
+ */
 public class OrderProductQuantity {
 
     private Integer productId;

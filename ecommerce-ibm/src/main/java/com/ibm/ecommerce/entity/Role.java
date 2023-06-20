@@ -3,6 +3,11 @@ package com.ibm.ecommerce.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * @author Dhrubajoti Dey
+ * I have created this class with parameters roleName and roleDescription and also generated it's getters and setters
+ *
+ */
 @Entity
 public class Role {
 	

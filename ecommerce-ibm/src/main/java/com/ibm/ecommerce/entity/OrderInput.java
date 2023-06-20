@@ -2,6 +2,12 @@ package com.ibm.ecommerce.entity;
 
 import java.util.List;
 
+/**
+ * @author Manya Mishra
+ * This is an entity class OrderInput in which I have stated the properties as fullName, fullAddress, contactNumber, EmailId, transactionId, and created a list of orderProductQuantityList 
+ *
+ *
+ */
 public class OrderInput {
 
     private String fullName;

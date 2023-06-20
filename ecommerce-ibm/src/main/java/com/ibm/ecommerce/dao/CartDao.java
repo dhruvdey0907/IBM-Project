@@ -8,6 +8,11 @@ import com.ibm.ecommerce.entity.User;
 
 import java.util.List;
 
+/**
+ * @author Jaspreet Kaur Saluja
+ * This is basically a repository to perform crud operations inside the database.
+ *
+ */
 @Repository
 public interface CartDao extends CrudRepository<Cart, Integer > {
     public List<Cart> findByUser(User user);

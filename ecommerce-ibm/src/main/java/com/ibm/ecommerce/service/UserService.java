@@ -11,6 +11,11 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @author Dhrubajoti Dey
+ * Here I have designed the paradigm  for the user to create his credentials.
+ *
+ */
 @Service
 public class UserService {
 
@@ -62,7 +67,6 @@ public class UserService {
         userRoles.add(role);
         user.setRole(userRoles);
         user.setUserPassword(getEncodedPassword(user.getUserPassword()));
-
         return userDao.save(user);
     }
 

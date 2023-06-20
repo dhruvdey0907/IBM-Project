@@ -12,6 +12,12 @@ import com.ibm.ecommerce.service.UserService;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * @author Dhrubajoti Dey
+ * Here the access control policy is generated.
+ * 
+ *
+ */
 @RestController
 public class UserController {
 

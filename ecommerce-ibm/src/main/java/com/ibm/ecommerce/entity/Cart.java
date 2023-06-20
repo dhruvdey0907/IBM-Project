@@ -1,7 +1,14 @@
 package com.ibm.ecommerce.entity;
 
+
 import javax.persistence.*;
 
+/**
+ * @author Jaspreet Kaur Saluja
+ * This is an entity of cart in which I have described cartId, product and user as parameters.
+ * We have also created one to one relationship between cart, product and cart,user.
+ *
+ */
 @Entity
 @Table
 public class Cart {

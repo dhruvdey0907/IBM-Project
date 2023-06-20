@@ -10,6 +10,10 @@ import com.ibm.ecommerce.entity.JwtRequest;
 import com.ibm.ecommerce.entity.JwtResponse;
 import com.ibm.ecommerce.service.JwtService;
 
+/**
+ * @author Dhrubajoti Dey
+ *
+ */
 @RestController
 @CrossOrigin
 public class JwtController {

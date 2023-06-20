@@ -21,6 +21,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
+/**
+ * @author Manya Mishra in which I have implemented functionalities of fetching order details by their status which is either delivered or placed,
+ *  placing order, getting email-confirmation with the help of smtp host and mime message internet standard and maintaing transactions.
+ * 
+ *
+ */
 @Service
 public class OrderDetailService {
 

@@ -11,6 +11,12 @@ import com.ibm.ecommerce.service.OrderDetailService;
 
 import java.util.List;
 
+/**
+ * @author Manya Mishra
+ * I have mapped various routes for OrderDetail Entity to place order, get order details, confirm delivery and maintains transaction
+ * and is authorised for user.
+ *
+ */
 @RestController
 public class OrderDetailController {
 

@@ -14,6 +14,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Jaspreet Kaur Saluja and Manya Mishra 
+ * We have mapped various routes for Product Entity in which we are adding new product(authorised by admin), fetching product details and deleting product details 
+ *(authorised by admin).
+ */
 @RestController
 public class ProductController {
 

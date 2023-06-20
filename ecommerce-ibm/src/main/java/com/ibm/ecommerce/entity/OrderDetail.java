@@ -1,7 +1,14 @@
 package com.ibm.ecommerce.entity;
 
+
+
 import javax.persistence.*;
 
+/**
+ * @author  Jaspreet Kaur Saluja
+ * This is an entity of OrderDetail in which I have described properties as orderId, orderFullName, orderFullOrder, orderContactNumber, orderEmailId, orderStatus, orderAmount  as parameters.
+ *
+ */
 @Entity
 public class OrderDetail {
 

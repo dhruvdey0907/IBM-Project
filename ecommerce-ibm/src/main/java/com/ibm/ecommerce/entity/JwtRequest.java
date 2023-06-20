@@ -1,5 +1,10 @@
 package com.ibm.ecommerce.entity;
 
+
+/**
+ * @author Dhrubajoti Dey
+ *
+ */
 public class JwtRequest {
 
     private String userName;

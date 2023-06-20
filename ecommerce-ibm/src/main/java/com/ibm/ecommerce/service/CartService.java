@@ -14,6 +14,10 @@ import com.ibm.ecommerce.entity.User;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @author Jaspreet Kaur Saluja in which I have implemented functionalities of adding products to cart, removing duplicate products from cart
+ * and getting details cart details.
+ */
 @Service
 public class CartService {
 

@@ -12,6 +12,11 @@ import com.ibm.ecommerce.service.CartService;
 
 import java.util.List;
 
+/**
+ * @author Jaspreet Kaur Saluja 
+ * I have mapped various routes for cart entity which adds, deletes and gives cart details and is only authorised for the user.
+ *
+ */
 @RestController
 public class CartController {
 
